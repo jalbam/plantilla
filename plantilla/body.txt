@@ -1,0 +1,29 @@
+<center><font color="<?php echo $font_color_title?>" size="<?php echo $font_size_title?>">
+<?php readfile($title_file); ?>
+</font></center>
+<p>
+<font color="<?php echo $font_color?>" size="<?php echo $font_size?>">
+Texto en la web
+</font>
+</p>
+<p>
+<font color="<?php echo $font_color?>" size="<?php echo $font_size + 1?>">
+<?php
+echo "&copy; ";
+readfile($title_file);
+echo "<br>";
+if (isset($contact_nif) && $contact_nif != "off") { echo $contact_nif."<br>"; }
+if (isset($contact_street_location) && $contact_street_location != "off") { echo $contact_street_location."<br>"; }
+if (isset($contact_cp) && $contact_cp != "off") { echo $contact_cp." "; }
+if (isset($contact_city_location) && $contact_city_location != "off") { echo $contact_city_location."<br>"; }
+if (isset($contact_country_location) && $contact_country_location != "off") { echo $contact_country_location."<br><br>"; }
+if (isset($contact_pd) && $contact_pd != "off") { echo "Distrito postal: ".$contact_pd."<br><br>"; }
+if (isset($contact_tlf) && $contact_tlf != "off") { echo $contact_tlf."<br>"; }
+if (isset($contact_email) && $contact_email != "off") { echo "<a href=\"mailto:".$contact_email."\" title=\"".$contact_email."\">".$contact_email."</a><br>"; }
+
+//if (isset($supply_category)) { $supply_category = trim($supply_category); }
+                                 
+?>
+</font>
+</p>
+<br>

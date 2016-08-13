@@ -1,0 +1,25 @@
+<?php
+
+//Monedas permitidas: EUR (Euro), USD (Dolares Americanos).
+$product_money = "EUR";
+
+//El espacio que hay despues del precio y del symbol (sea texto o imagen):
+$money_symbol_separator = " ";
+
+//Ancho y alto de la imagen de symbol, si existe (puede ser "auto"):
+$money_img_width = "20";
+$money_img_height = "15";
+
+//Simbolo milesimal, decimal y numero de decimales que se representaran (0 = ninguno):
+$money_miles_symbol = ".";
+$money_dec_symbol = ",";
+$money_dec = "2";
+
+//Valores respecto a $product_money (como symbol puede utilizarse un texto o una imagen):
+$money_eur_valor = "1";
+$money_eur_symbol = "EUR <img src=\"img/money/eur.gif\" width=\"20\" height=\"15\" alt=\"EUR\" title=\"EUR\" hspace=\"0\" vspace=\"0\">";
+
+$money_usd_valor = "1.280";
+$money_usd_symbol = "img/money/usadol.gif";
+
+?>

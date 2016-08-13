@@ -1,0 +1,2 @@
+Plantilla y motor para crear una tienda virtual, by Joan Alba Maldonado.
+Para configurar, editar los archivos de texto (.txt) y poner las imagenes en img.

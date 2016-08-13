@@ -1,0 +1,12 @@
+<?php
+if(SID) {
+?>
+<a href="option1.htm?<?php echo SID; ?>" title="Option1" class="menu" onMouseOver="window.status='Option1'; return true;" onMouseOut="window.status='<?php readfile($title_file); ?>'; return true;" accesskey="o"><b><u>O</u>ption 1</b></a>
+<?php 
+} else {
+?>
+<a href="option1.htm" title="Option1" class="menu" onMouseOver="window.status='Option1'; return true;" onMouseOut="window.status='<?php readfile($title_file); ?>'; return true;" accesskey="o"><b><u>O</u>ption 1</b></a>
+<?php
+}
+?>
+<br><br>

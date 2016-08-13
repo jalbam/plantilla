@@ -1,0 +1,82 @@
+# Urgente:
+* testear muchisimo la plantilla en distintos navegadores y con todo tipo de pruebas, mirar codigo HTML resultante, etc... por si lo de cambiar de resolucion, etc. falla
+  o hay algun tipo de error.
+
+# Falla:
+* htmlspecialchars en propiedad title de los <a href>'s que hay en menu. Vigilar otros links como en products, basket, etc...
+* Cambiar <br /> por <br> (?)
+* En la propiedad value de los input de basket, contact, etc. poner htmlspecialchars (buscar bugs similares).
+
+
+# Falta:
+
+* poner a:visited en el css para los links visitados!!! (BUENO MEJOR NO KE SI NO NO SE KITA EL SUBRAYADO SI SE HA VSITADO EL LINK)
+* Opcion en variable de activar o desactivar boton de añadir a cesta cuando un producto ya esta en ella (en products.php)
+* Activar opcion de dni necesario, para algunas tiendas que venden productos alcoholicos, etc. y validador del dni.
+* enviar a contact_mail un email con error si no se ha podido enviar mail al cliente. si no se puede, logear.
+* variable para establecer un minimo de dinero para poder realizar el pedido.
+* enviar errores al e-mail kuando okurren (usar libro para informarme) i probar.
+* poner en el index antes los deskuentos ke la informacion i datos de la empresa (poner estos en index.php a pelo, i no en body.txt).
+* usar css para el borde de la tabla de los productos (ya se utiliza en basket y en la tabla general).
+* usar $css_file ke hai en config.php (poner a "off" por defekto).
+* cambiar valign por align en los tags <img>
+* Enviar por E-Mail al cliente (el que el ha introducido) que se ha recibido pedido/contacto y mostrarle datos, y que en caso de error que se ponga en contaxto con nosotros lo antes posible.
+* Logear errores (si $log_errors = on) y logear errores de email (si $log_errors_email = "on"). Si da error email, logear error y enviar mail a $error_mail. Si la notificacion de
+error falla, logear.
+* Log de pedidos: directorio de logs ($logs_dir?) con errors.log, pedidos, emails de kontakto y pedido enviados y no enviados, cestas inacabadas (gente que abandona la web sin
+realizar pedido pero ha llenado la cesta), etc... y visores. En .php mejor que .log, para proteger datos.
+* si $money_file_is_a_url esta en "on" tratar como una url
+* soportar varios idiomas y posibilidad de añadir mas (con posibilidad de kambiar logo de bandera kon variables)
+* crear items.txt, category.txt, etc. solo si $db_type="text"(a no ser que utilice los .txt para actualizar la BD de mySQL)
+* Vigilar SQL Injection (con mysql_real_escape_string) y eliminar drop, update, etc...
+* pasar los .txt a .php y proteger asi su acceso, y en config.php o files.php -> $pwd_file="password.php" (p.ej.) (y en edit FORZAR
+  cambio de password por primera vez que se inicie)
+* archivo llamado files.php
+* considerar pasar conversor de monedas sobre texto y no sobre variables .> texto_a_representar:valor_respecto_al_master (p.ej <img src=\"eur.gif\">:1.5).
+* posibilidad de quitar el menu ($menu_show = "off") y tambien setear $shopping="off" (desactivar tienda)
+* hacer que en body.txt puedan utilizarse $variables sin tener ke llamar a php, (incovar echo y cerrarlo?).
+* guardar el traceroute del kliente en un arxivo (guest.txt?) o en otro distinto si no se realiza el pedido.
+* komprobar ke todas las variables esten seteadas
+* posibilidad de poner imagen fija en tag <body> (ke no haga scroll).
+* posibilidad de poner "On" y "oN" y "ON", etc. ke de igual mayus/minus.
+* komprobar si existen o no products.php, pedido.php, etc...
+* estadistikas tambien en mySQL si se aktiva (variable que alterne entre estadistikas en .txt, mysql o las dos).
+* Enviar E-Mail con error/notice/alert al ocurrir este (mirar libro de php) siempre que $send_email_on_php_problems = "on".
+* Pasar el valor de algunas variables booleanas a mayusculas, para que permita oN, On, etc.
+* Al abrir una imagen (zoom), no abrir en una ventana nueva si la imagen ya esta abierta en una (solo focalizarla).
+* Una variable que determine un maximo de numero de emails a enviar a $email_error si estos suceden (para evitar el flood).
+* HTMLENTITIES (en lugar de HTMLSPECIALCHARS) al leer y plasmar comentarios de products, etc. desde el txt a products.php (y en basket.php?).
+* Considerar $_SERVER['QUERY_STRING'] para recoger variables de la URL.
+
+
+# General: 
+
+* "?session_name=session_id" en todas las url (por si alguien copia la url a un amigo o de un navegador a otro que no se vayan los datos de la cesta).
+* usar @ en las llamadas, etc. al archivo password.php para evitar errores que muestren datos confidenciales. en otras instrukciones kiza tambien.
+* diseño (background en table de products, bordes redondeados, etc... altamente configurable).
+* crear edit.php (...)
+* crear soporte para mySQL (...)
+* crear soporte multi-lenguaje.
+* ofrecer XML (?) para noticias de productos o para lo que pueda servir.
+* WAP version (detektar y ofrecer WML con PHP en lugar de HTML si es necesario).
+* version sin tablas (para lynx, etc.)m automatizar (detectar si soporta tablas).
+* otras formas de pago: tarjeta de kredito, paypal, transferencia bankaria, kontrareembolso, etc.
+* soportar HTTPS para transferencias seguras (elegir si usar https por variables).
+
+
+# Edit (edit.php):
+
+* opcion backup en edit.,php (de los .txt, .php, de los config, title, etc... y de mySQL. etc).
+* opciones en edit.php: · asistente
+			· backup
+			· variables de aspekto
+			· variables de konfiguracion
+			· textos (menu, body, etc.)
+			· produktos
+* konvertir karakteres especiales a &ntilde;, etc. y mostrar mapa de karakteres raros (kon una opcion de PHP se hace automatikamente).
+
+
+# Problemas:
+
+* La cesta admite numeros alfanumericos ("5e" p.ej.), etc.
+* Podria dar problemas el eskribir/leer un archivo a la vez ke lo hace otro kliente (konsultar y probar).

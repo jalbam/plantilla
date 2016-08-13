@@ -1,0 +1,485 @@
+<?php
+//Programa y Web por Joan Alba Maldonado
+
+
+//Para que una variable apunte a otra, debe asegurarse que esta otra esta definida con anterioridad.
+//Puede ser necesario alterar el orden de representacion de las siguientes variables para tal fin.
+
+//Se establece el limite de ejecucion maximo. Cero (0) lo pondra a infinito. Funciona a no ser que PHP este en safe-mode (puede ponerse a "off"):
+$set_time_limit = "0";
+
+//Titulo de la web:
+$title_web = "Company Title";
+
+//Primera Pagina web, el indice:
+$index_file = "index.php";
+
+//Archivo para almacenar errores:
+$errors_file = "errors.txt";
+
+//Archivo para almacenar CSS:
+$css_file = "default.css";
+
+//Archivo que contiene el titulo/nombre de la empresa (leer languages.txt para mas informacion sobre idiomas):
+$title_file = "title.txt";
+
+//Autor de la web (se utilizara en la variable correspondiente de meta-tags, mas abajo, a no ser que se indique lo contrario):
+$author_web = "Joan Alba Maldonado";
+
+//Programa con que se edito la web (se utilizara en la variable correspondiente de meta-tags, mas abajo, a no ser que se indique lo contrario):
+$generator_web = "MAX's HTML Beauty++ 2004";
+
+//Lenguaje que utiliza la web (se utilizara en la variable correspondiente de meta-tags, mas abajo, a no ser que se indique lo contrario):
+$language_web = "Spanish";
+
+//Lenguaje que utiliza la web, abreviado (se utilizara en la variable correspondiente de meta-tags, mas abajo, a no ser que se indique lo contrario):
+$language_short_web = "es";
+
+//Archivo que contiene el codigo del menu:
+$menu_file = "menu.txt";
+
+//TAG DOCTYPE que define el tipo de documento (no alterar si no se esta seguro):
+$doctype = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">";
+
+//Informacion que se utilizara para generar meta-tags (pueden setearse a "off"). No pasarse de 10 palabras en keywords ni mas de 150 caracteres en description:
+$meta_title = $title_web;
+$meta_subject = "Tema del sitio web";
+$meta_description = "Descripcion del sitio web";
+$meta_keywords = "Palabra1, Palabra2, Palabra3, Palabra4, Palabra5, Palabra6, Palabra7, Palabra8, Palabra9, Palabra10";
+$meta_author = $author_web;
+$meta_generator = $generator_web;
+$meta_distribution = "global";
+$meta_robots = "all";
+$meta_revisit = "1 day";
+$meta_revisit_after = "1 day";
+$meta_mademail = "drogaslibres@hotmail.com";
+$meta_language = $language_web;
+$meta_language_short = $language_short_web;
+$meta_url = "http://www.empresa.com/";
+
+//Si esta en "on", detectara si el navegador soporta Javascript (creando una variable llamada $_SESSION['javascript_support'] en "enabled" si es afirmativo):
+$javascript_detect = "on";
+
+//Invertir los contenidos (ademas, barra de desplazamiento a la izquierda en Explorer):
+//Puede dar problemas inesperados si se setea a "on". No lo soportan todos los navegadores.
+$content_invert = "off";
+
+//El color hexadecimal #RRGGBB de la fuente utilizada por defecto en la pagina (fuera de tablas o cuando no se aplica $font_color):
+$general_text = "#333333";
+
+//El color de la fuente utilizada por defecto en products.php:
+$products_general_text = $general_text;
+
+//El color de la fuente utilizada por defecto en basket.php:
+$basket_general_text = $general_text;
+
+//El color de los links en la web (cuando no se aplica CSS o $css_file = "off")
+//link = enlace normal, alink = enlace activado, vlink = enlace visitado:
+$general_link = "#5555cc";
+$general_alink = "#ffffff";
+$general_vlink = $general_link;
+
+//El color y las propiedades de los links de la web (excepto el menu), se utilizan en CSS y substituye a los generales de arriba en caso de ser soportado:
+$css_link = "color:#5555cc; text-decoration:underline; font-family:arial; font-weight:normal; background-style:transparent; layer-background-style:transparent;";
+$css_link_visited = "off";
+$css_link_hover = "color:#ff0000; text-decoration:none; font-family:arial; font-weight:normal; background-style:transparent; layer-background-style:transparent;";
+$css_link_active = "color:#ffffff; text-decoration:none; font-family:arial; font-weight:normal; background-style:transparent; layer-background-style:transparent;";
+
+//El color y las propiedades de los links del menu, se utilizan en CSS:
+$css_menu_link = "color:#5555cc; text-decoration:none; font-family:arial; font-weight:normal; background-style:transparent; layer-background-style:transparent;";
+$css_menu_link_visited = "off";
+$css_menu_link_hover = "color:#ff0000; text-decoration:underline; font-family:arial; font-weight:normal; background-style:transparent; layer-background-style:transparent;";
+$css_menu_link_active = "color:#ffffff; text-decoration:none; font-family:arial; font-weight:normal; background-style:transparent; layer-background-style:transparent;";
+
+//Margenes para body (algunos solo funcionan en ciertos navegadores)
+//Para Microsoft Internet Explorer y basados: left_margin = margen izquierdo, top_margin = margen superior
+//Para Netscape, Mozilla y basados: margin_width = margen lateral (izquierdo), margin_height = margen vertical (superior):
+$general_left_margin = "0";
+$general_top_margin = "10";
+$general_margin_width = $general_left_margin;
+$general_margin_height = $general_top_margin;
+
+//Margenes que substituyen a los de arriba en caso de ser soportado CSS (px = pixels):
+$margin_top = $general_top_margin."px";
+$margin_left = $general_left_margin."px";
+$margin_right = "0px";
+$margin_bottom = "10px";
+
+//Variable que define el color hexadecimal #RRGGBB del fondo de la pagina (rojo, verde, azul).
+//Para ser un color debe comenzar por el caracter #. De lo contrario, se tratara como una imagen.
+//No se aplicara si esta en "off":
+$general_bg = "#aaaadd";
+
+//Si se pone a on, al hacer scrolling la imagen de fondo no se movera (en caso de que exista):
+$bg_fixed = "off";
+
+//El espacio en pixels que ocupa una linea de texto en vertical. Se utiliza en CSS. Formato [Numero_de_pixels]px (p.ej.: "20px"). Puede estar en "off"
+//(Por defecto esta en "off" pos posibles problemas en Clue v4.2):
+$line_height = "off";
+
+//Propiedades de los colores del Scrollbar (solo funciona en Explorer, al menos de momento). Se utiliza en CSS. En hexadecimal, formato #RRGGBB:
+$scrollbar_face_color = "#dddddd";
+$scrollbar_shadow_color = "#eeeeee";
+$scrollbar_highlight_color = "#ffffff";
+$scrollbar_3dlight_color = "#bbbbbb";
+$scrollbar_darkshadow_color = "#aaaaaa";
+$scrollbar_track_color = "#ffffff";
+$scrollbar_arrow_color = "#aaaaff";
+
+//El color hexadecimal #RRGGBB de la fuente utilizada por defecto en la pagina:
+//Por defecto, el mismo que en $body_text:
+$font_color = $general_text;
+
+//El color hexadecimal #RRGGBB de la fuente utilizada para el titulo en la pagina:
+$font_color_title = "#aa0000";
+
+//El color de la fuente utilizada en el titulo del menu:
+$font_color_little_title = $font_color_title;
+
+//El tamaño de la fuente standard (del 1 al 7, el 7 es el mas grande):
+$font_size = "2";
+
+//El tamaño de la fuente del titulo (del 1 al 7, el 7 es el mas grande):
+$font_size_title = "6";
+
+//El tamaño de la fuente del titulo en el menu:
+$font_size_little_title = $font_size + 1;
+
+//El nombre de la imagen del logotipo.
+$logo_file = "img/logo/logo.jpg";
+
+//El tamaño horizontal de la imagen indicada en $logo
+$logo_width = "600";
+
+//El tamaño vertical de la imagen indicada en $logo
+$logo_height = "100";
+
+//El tamaño horizontal de la tabla general (la que incluye menu.txt y body.txt).
+//Se reparte a razon de un 25% para el menu, y un 75% para el cuerpo. Debe ser un numero entero.
+//Por defecto, el mismo que $logo_width:
+$table_width = $logo_width;
+
+//El ancho de la tabla que contiene los productos en concreto :
+$product_table_width = $table_width - 230;
+
+//El ancho de la tabla de la cesta de compra:
+$basket_table_width = $product_table_width;
+
+$basket_table_cellspacing = "0";
+$basket_table_cellpadding = "5";
+
+//Poner en on para que el usuario pueda alternar entre resoluciones:
+$user_can_alternate_page_width = "on";
+
+//Activa la deteccion automatica de la resolucion mediante javascript (pero puede dar error en algunos navegadores antiguos -> undefined screen, etc.).
+//Requiere $javascript_detect = "on";
+$javascript_autodetect_resolution = "on";
+
+//Especificar una imagen distinta de Logotipo al cambiar de resolucion (para dejar la misma, especificar "auto" como imagen). No poner a "off".
+//(Funciona solo si $user_can_alternate_page_width = "on"):
+$logo_file_less_than_640x480 = "img/logo/less640.jpg";
+$logo_width_less_than_640x480 = "430";
+$logo_height_less_than_640x480 = "80";
+$logo_file_640x480 = $logo_file;
+$logo_width_640x480 = $logo_width;
+$logo_height_640x480 = $logo_height;
+$logo_file_800x600 = "img/logo/800.jpg";
+$logo_width_800x600 = "720";
+$logo_height_800x600 = "120";
+$logo_file_1024x768 = "img/logo/1024.jpg";
+$logo_width_1024x768 = "880";
+$logo_height_1024x768 = "125";
+$logo_file_1280x1024 = "img/logo/1280.jpg";
+$logo_width_1280x1024 = "1024";
+$logo_height_1280x1024 = "135";
+$logo_file_more_than_1280x1024 = "img/logo/more1280.jpg";
+$logo_width_more_than_1280x1024 = "1400";
+$logo_height_more_than_1280x1024 = "145";
+
+//Resoluciones soportadas, para que el usuario pueda alternarlas (si $user_can_alternate_page_width = "on"). Poner el valor de width entre comillas:
+//Nota: no poner a "off", para desactivar: comentar con //
+$page_width_less_than_640x480 = $logo_width_less_than_640x480;
+$page_width_640x480 = $logo_width_640x480;
+$page_width_800x600 = $logo_width_800x600;
+$page_width_1024x768 = $logo_width_1024x768;
+$page_width_1280x1024 = $logo_width_1280x1024;
+$page_width_more_than_1280x1024 = $logo_width_more_than_1280x1024;
+
+//El tamaño horizontal de la tabla que contiene los productos al alternar las resoluciones:
+$product_table_width_less_than_640x480 = $page_width_less_than_640x480 - 140;
+$product_table_width_640x480 = $product_table_width;
+$product_table_width_800x600 = $page_width_800x600 - 250;
+$product_table_width_1024x768 = $page_width_1024x768 - 300;
+$product_table_width_1280x1024 = $page_width_1280x1024 - 340;
+$product_table_width_more_than_1280x1024 = $page_width_more_than_1280x1024 - 420;
+
+//Ancho de la tabla basket segun la resolucion:
+$basket_table_width_less_than_640x480 = $product_table_width_less_than_640x480;
+$basket_table_width_640x480 = $product_table_width_640x480;
+$basket_table_width_800x600 = $product_table_width_800x600;
+$basket_table_width_1024x768 = $product_table_width_1024x768;
+$basket_table_width_1280x1024 = $product_table_width_1280x1024;
+$basket_table_width_more_than_1280x1024 = $product_table_width_more_than_1280x1024;
+
+//El borde de la tabla de la cesta de compra (0 = ninguno):
+$basket_table_border = "1";
+$basket_table_border_css = "1";
+
+//El color del borde de la tabla de la cesta de compra (no se aplica si $basket_table_border esta a 0):
+$basket_table_border_color = "#848fc8";
+$basket_table_border_color_dark = "#848fc8";
+$basket_table_border_color_light = "#848fc8";
+
+//El color (#RRGGBB) o la imagen de fondo de la tabla (se aplican las mismas reglas que en $general_bg):
+$table_bg = "#aaaaff";
+
+//El borde de la tabla (0 = ninguno):
+$table_border = "0";
+$table_border_css = "0";
+
+//El color del borde de la tabla (no se aplica si $table_border esta a 0):
+$table_border_color = "#ff0000";
+$table_border_color_dark = "#ff0000";
+$table_border_color_light = "#ff0000";
+
+//Espacio entre celdas ($table_cellspacing), y espacio entre el comienzo de la celda y el contenido ($table_cellpaddig).
+//Se recomienda dejar a 0, y solo cambiar $table_margin:
+$table_cellspacing = "0";
+$table_cellpadding = "0";
+$table_margin = "25";
+
+//El color (#RRGGBB) o la imagen de fondo para el menu (se superpone a $table_bg):
+$menu_bg = "#ffaaaa";
+
+//El color (#RRGGBB) o la imagen de fondo para el cuerpo (se superpone a $table_bg). Por defecto, lo mismo que $table_bg:
+$body_bg = $table_bg;
+
+//Telefono de contacto de la empresa (poner a "off" para desactivar):
+$contact_tlf = "+034 123 123 456";
+
+//Calle, Avenida, etc. de localizacion de la empresa (poner a "off" para desactivar):
+$contact_street_location = "c/13 Rue del Percebe nº69 6º9ª";
+
+//Ciudad, provincia, etc. de localizacion de la empresa (poner a "off" para desactivar):
+$contact_city_location = "Cambrils (Tarragona)";
+
+//Pais de localizacion de la empresa (poner a "off" para desactivar):
+$contact_country_location = "Espa&ntilde;a";
+
+//Codigo postal de la empresa (poner a "off" para desactivar):
+$contact_cp = "43850";
+
+//El NIF de la empresa (poner a "off" para desactivar):
+$contact_nif = "NIF: 123456789";
+
+//Codigo del distrito postal (Apartado de correos) de la empresa (poner a "off" para desactivar):
+$contact_pd = "off";
+
+//E-Mail de contacto:
+$contact_email = "drogaslibres@gmail.com";
+
+//E-Mail para las compras:
+$business_email = "drogaslibres@gmail.com";
+
+//E-Mail para enviar las estadisticas, el dia 1 de cada mes. Para desactivar, poner en "off":
+$stats_email = "drogaslibres@gmail.com";
+
+//E-Mail para enviar los errores (siempre que uno ocurra, se envia un E-Mail). Para desactivar, poner en "off":
+$email_error = "drogaslibres@gmail.com";
+
+//Al enviar E-Mails esde la web, puede hacer que se envie una copia oculta a la siguiente direccion (puede ponerse a "off"):
+$email_bcc = "drogaslibres@gmail.com";
+
+//Al enviar E-Mails esde la web, puede hacer que se envie una copia sin ocultar a la siguiente direccion (puede ponerse a "off"):
+$email_cc = "off";
+
+//Elegir el formato con el que llegaran los pedidos, comentarios enviados en la seccion contactos, etc.
+//Puede ser "html" (para HTML) o "text" (texto plano):
+$send_emails_format = "html";
+
+//Indica si es necesario ("on") o no ("off") indicar el codigo postal para enviar un pedido:
+$cp_is_requiered_to_order = "on";
+
+//El Anti-flood al enviar E-Mails (incluye seccion Contacto y Pedido). Sirven para una misma sesion, con una misma IP y un mismo navegador:
+$emails_max_expire_secs = "300"; //Despues de este periodo, que comienza a contar desde el primer E-Mail enviado, el contador de flood se pone a cero.
+$emails_max = "25"; //El maximo de E-Mails que se pueden enviar en el periodo de tiempo.
+
+//Si se activa a "on", se creara un log con la ruta que ha realizado cada cliente y al recibir un E-Mail tambien se recibira un log individual de cada uno:
+$spy_route_client = "on";
+
+//Si esta en "on", el link "Contacto" del menu ira directo a una pagina donde poder enviar E-Mail por PHP.
+//Si esta en "off", ira directo al E-Mail con mailto (necesario cliente de E-Mail):
+$contact_page = "on";
+$contact_file = "contact.php";
+
+//Si esta en "on", el link "Pedido" del menu ira directo a una pagina donde poder formalizar el pedido realizado con la cesta de compra o sin ella en caso
+//de que esta no funcionara:
+$process_page = "on";
+$process_file = "basket.php";
+
+//Define si el usuario puede enviar pedidos manualmente en caso de que la cesta de compra este vacia (por si esta falla, cosa poco probable):
+$user_can_send_order_manually = "on";
+
+//Tipo de base de datos para los productos. Puede ser "text" para un archivo de texto ASCII (items.txt) o "mysql" para mySQL.
+//Formato archivo de texto: Referencia:Localizacion_Imagen:Nombre_Producto:Categoria:Subcategoria:Precio:'Descripcion'|
+//Localizacion_Imagen puede estar en AUTO, y entonces se buscara imagenes con el mismo nombre que la referencia (pasando caracteres - a _, etc.).
+$db_type = "text";
+
+//Archivo que contiene los productos (solo si $db_type = "text";):
+//Formato archivo de texto: Referencia:Localizacion_Imagen:Nombre_Producto:Categoria:Subcategoria:Precio:"Descripcion";
+$items_file = "items.txt";
+
+//Archivo de texto que contiene la categoria de productos (se crearan links en menu.txt). Solo funciona si $db_type = "text";.
+//Formato de archivo de texto: Categoria_1: Subcategoria1, Subcategoria2, Subcategoria3| (creara enlaces a $products_file?category={CATEGORIA})
+//Falta: Comprobar si existen o no products.php, pedido,php, etc..
+//Archivo para listar los productos:
+$category_file = "category.txt";
+
+//Archivo que contiene el visualizador de productos (solo si $db_type = "text";):
+$products_file = "products.php";
+
+//Pagina de formalizacion del pedido y cesta de compra:
+$basket_file = "basket.php";
+
+//Activa o desactiva el conversor de monedas:
+$money_converter = "on";
+
+//Moneda por defecto en caso de tener el conversor a "off" (se muestra al lado del precio) y tambien para especificar descuentos al superar una cantidad determinada:
+$money_default = " EUR <img src=\"img/money/eur.gif\" width=\"20\" height=\"15\" alt=\"EUR\" title=\"EUR\" hspace=\"0\" vspace=\"0\">";
+
+//Indica un archivo o una URL con el archivo de money.txt:
+$money_file = "money.txt";
+
+//Indica si $money_file es una URL ("yes") o es un archivo ("no"):
+$money_file_is_url = "no";
+
+//Activar o desactivar el titulo con todas las categorias y subcategorias que se visualizan:
+$product_title = "on";
+
+//El ancho (width) y el largo (heidht) de las imagenes de los productos. Si se pone en "auto" sera el tama&ntilde;o real:
+$product_img_width = "120";
+$product_img_height = "120";
+
+//El ancho y el largo de las imagenes de los productos en la cesta de compra (si se pone a "auto", sera el tamaño real):
+$basket_img_width = "40";
+$basket_img_height = "40";
+
+//El ancho y largo de la ventana emergente al ampliar una foto en basket y en products (solo si se soporta javscript):
+$product_and_basket_popup_zoom_window_width = "610";
+$product_and_basket_popup_zoom_window_height = "450";
+
+//El directorio donde se buscaran las imagenes al estar en "auto" (dejar en blanco "" si se desea, no existe "off"):
+$product_img_auto_path = "img/items/";
+
+//Directorio donde se almacenan las imagenes en miniatura de los productos (para la cesta de compra):
+$basket_img_auto_path = $product_img_auto_path . "mini/";
+
+//Extension de las imagenes automaticas:
+$product_img_auto_extension = ".jpg";
+
+//El directorio donde se almacenan las capturas de las imagenes en grande (para verlas ampliadas), tanto en
+//products como en basket:
+$product_and_basket_img_zoom_path = $product_img_auto_path . "zoom/";
+
+//Posibilidad de introducir decimales en la cesta de compra:
+$basket_allow_decs = "off";
+
+//Define si el punto "." es un simbolo para marcar decimales en basket:
+$basket_dot_is_dec = "on";
+
+//Define si abrir una ventana emergente con basket utilizando javascript al poner un producto en la cesta (siempre que esten activadas las cookies):
+$basket_javascript_popup = "off";
+
+//Define si la ventana popup con basket se abre con el mismo tamaño que la resolucion que se utilice (requiere $basket_javascript_popup = "on"):
+//Se recomienda dejar a "off" ya que puede dar problemas con navegadores como Opera, FireFox, etc.
+$basket_javascript_popup_fit_to_screen = "off";
+
+//Define si ampliar la ventana popup con basket hasta hacerlo fullscreen o no (requiere $basket_javascript_popup = "on").
+//Se recomienda dejar a "off" y setear solamente $basket_javascript_popup_fit_to_screen a "on" como substituto:
+$basket_javascript_popup_fullscreen = "off";
+
+//Si se pone "on" se listara la opcion "VER TODOS" en el menu (de lo contrario, setear a "off"):
+$menu_list_all_option = "on";
+
+//Poner a "on" para mostrar la opcion "Mi cesta" en el menu:
+$menu_view_basket = "on";
+
+//Si se pone "on" se listara la opcion de BUSQUEDA en el menu (de lo contrario, setear a "off"):
+$menu_search_form = "on";
+
+//Poner en "on" para listar las subcategorias en el menu:
+$menu_show_subcategories = "off";
+
+//Propiedades de la tabla de los productos:
+$product_table_cellspacing = "0";
+$product_table_cellpadding = "8";
+$product_table_border = "2";
+$product_table_border_css = "2";
+$product_table_border_color = "#848fc8";
+$product_table_border_color_dark = "#848fc8";
+$product_table_border_color_light = "#848fc8";
+
+//Esta es la categoria donde se almacenan las ofertas (debe estar en category.txt, por ejemplo asi -> Ofertas:|).
+$supply_category = "Ofertas";
+
+//Impuestos (gastos de envio, mano de obra, servicio, IVA, etc.) que se suman al total del pedido.
+//$taxes equivale a un precio fijo que se suma al total (como 5 euros de gastos de envio), y $taxes_percent un porcentaje del
+//total que se suma al total (como 16 por ciento de IVA).
+//$taxes_text y $taxes_percent_text equivalen a la explicacion de porque se aplica estos impuestos.
+//Pueden estar a "off":
+$taxes_text = "Servicio";
+$taxes = "5";
+$taxes_percent_text = "IVA";
+$taxes_percent = "16";
+
+//Impuestos aplicados fuera de una zona especifica (para desactivar, poner las dos variables en "off"):
+$additional_cost_outside_text = "Fuera de la Peninsula Iberica";
+$additional_cost_outside = "8";
+
+//Activa o desactiva la opcion de poder elegir entre diversas formas de envio:
+$shipment_different_methods = "on";
+
+//Diversas formas de envio (si $shipment_different_methods = "on"):
+$shipment_method_1_text = "Transporte normal (una o dos semanas)";
+$shipment_method_1 = "0";
+$shipment_method_2_text = "Transporte semi-urgente 48 horas";
+$shipment_method_2 = "5";
+$shipment_method_3_text = "Transporte urgente en 24 horas";
+$shipment_method_3 = "10";
+$shipment_method_4_text = "Transporte urgente con seguro";
+$shipment_method_4 = "20";
+$shipment_method_5_text = "off";
+$shipment_method_5 = "off";
+
+//Activa o desactiva la opcion de poder elegir entre diversas formas de pago:
+$payment_different_methods = "on";
+
+//Diversas formas de pago (si $shipment_different_methods = "on"):
+$payment_method_1_text = "Contrareembolso";
+$payment_method_1 = "0";
+$payment_method_2_text = "Transferencia bancaria";
+$payment_method_2 = "-5";
+$payment_method_3_text = "off";
+$payment_method_3 = "off";
+$payment_method_4_text = "off";
+$payment_method_4 = "off";
+$payment_method_5_text = "off";
+$payment_method_5 = "off";
+
+//Descuentos que se aplican al superar una cantidad requerida en el total sin contar impuestos (poner a cero (0) para aplicar a todos los perdidos, poner a "off" para no utilizar descuentos).
+//Se recomienda solo utilizar uno de los dos:
+$supply_on_total_money_requiered = "25";
+$supply_on_total_money_requiered_percent = "50";
+
+//La cantidad de dinero que se descuenta al superar la cantidad especificada sin contar impuestos mas arriba:
+$supply_on_total_money_to_discount = "10";
+$supply_on_total_money_to_discount_percent = "5";
+
+//Si se activa a "on", se mostraran los descuentos en el indice:
+$show_discounts_on_index = "on";
+
+//Texto que aparece en los dos botones de la cesta de compra: 
+$basket_edit_button = "Editar";
+$basket_delete_button = "Borrar";
+
+?>

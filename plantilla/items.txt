@@ -1,0 +1,47 @@
+Referencia:Localizacion_Imagen:Nombre_Producto:Categoria:Subcategoria:Precio:'Descripcion'|
+
+1-Ab:auto:Tela magicarl:Telas:Magicas:12.5:'desc.txt'|
+1-Ab:auto:Tela magicarl:Bromas:Otros:12.5:'desc.txt'|
+
+1Ab:auto:Tela magica:Telas:Magicas:12.5:'desc.txt'|
+
+3Dc:auto:*Gato volador:Bromas:Otros:6.45:'Descripcion del producto 3Dc'|
+5Ab : kk.gif : Platano de mentira : Bromas : Otros : 9.25: 'Texto explicativo de un pene' |
+
+6JdfgfdgL:img.jpg:*Tela rojisima:Telas:Rojas:21.10:'tela.txt'|
+
+234ñññ-_-03sfdJL:algo.jpg:*Pizza loca:Pizzas:Cuatro estaciones:6.69:'tela.txt'|
+
+ref1:imagen:nombra:nada:nada:5342:'safds'|
+ref11:         img/items/ima-gen.jpg        :nombra:nada:nada:5342:'safds'|
+ref133:img/items/ima-gen.jpg:nombfdsssssra:nada:nada:5342:'safds'|
+ref2:imagen:*nombrí:nada:nada:1345:'safds'|
+ref3:imagen:nombró:nada:nada2:534345:'safds'|
+
+       ima-gen      :auto:nombró:nada:nada2:534345:'safds'|
+
+    çç ññ adasd çç ññ   :auto:nombró:nada:nada2:534345:'safds'|
+
+ref4533:     img/items/çç ññ adasd çç ññ.jpg     :nombró:nada:nada2:534345:'safds'|s
+
+ref4533ab:     img/items/ççññadasdççññ.jpg     :nombró:nada:nada2:534345:'safds'|s
+   ççññadasdççññ   :auto:nombró:nada:nada2:534345:'safds'|
+
+1Ab2:auto:Tela magica:Telas:Magicas:12.52:'desc.txt'|
+
+ref4:imagen:nombre: çñ Marico na das:n a d a:5:'safds'|
+
+ref77:imagen ñç fsd:nombre: çñ Marico na das:n a d a:5:'safds'|
+
+refç74:auto:nombre: çñ Marico na das:n a d a:5:'safds'|
+
+ref75 çñ asd:ref74 çñ asd.jpg:nombre: çñ Marico na das:n a d a:5:'safds'|
+
+yas69:auto:*La Pornochacha Yasmina:Bromas:Raras:0.1:'Pornochacha que hara las delicias del mas exigente amo.'|
+
+696969:auto:Tela de Paquito el Lefatero:Telas:Magicas:99.2:'Menenllefante y gallifante a la par que exhuverante paquito, all&iacute; donde los haya. Ni m&aacute;s ni menos, nengk.'|
+
+referencia:auto:una simple pruebita nom&aacute;s:M&aacute;s co&ntilde;er&iacute;as:asd&aacute;s:0.8:'<table border="1" align="center"><tr><td><font color="#ff0000" size="5"><blink>hola</blink></font></td><td><img src="img/696969.jpg" title="Paquito el lefatero" width="35" height="35" align="center"></td></tr></table><center><font color="#ffff00" size="6">dfsdsadfasdfas</font></center>'|
+696968:auto:sdafasdfsd:M&aacute;s co&ntilde;er&iacute;as:Otros:99.2:'Menenllefante y gallifante a la par que exhuverante paquito, all&iacute; donde los haya. Ni m&aacute;s ni menos, nengk.'|
+
+ref78:auto:*Kit Guay:Kits:Kititos:50:'esto es el mejor kit'|
